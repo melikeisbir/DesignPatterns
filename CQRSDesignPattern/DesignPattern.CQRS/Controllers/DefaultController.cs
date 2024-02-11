@@ -12,13 +12,15 @@ namespace DesignPattern.CQRS.Controllers
         private readonly GetProductByIDQueryHandler _getProductByIDQueryHandler;
         private readonly RemoveProductCommandHandler _removeProductCommandHandler;
         private readonly GetProductUpdateByIDQueryHandler _getProductUpdateByIDQueryHandler;
-        public DefaultController(GetProductQueryHandler getProductQueryHandler, CreateProductCommandHandler createProductCommandHandler, GetProductByIDQueryHandler getProductByIDQueryHandler, RemoveProductCommandHandler removeProductCommandHandler, GetProductUpdateByIDQueryHandler getProductUpdateByIDQueryHandler)
+        private readonly UpdateProductCommandHandler _updateProductCommandHandler;
+        public DefaultController(GetProductQueryHandler getProductQueryHandler, CreateProductCommandHandler createProductCommandHandler, GetProductByIDQueryHandler getProductByIDQueryHandler, RemoveProductCommandHandler removeProductCommandHandler, GetProductUpdateByIDQueryHandler getProductUpdateByIDQueryHandler, UpdateProductCommandHandler updateProductCommandHandler)
         {
             _getProductQueryHandler = getProductQueryHandler;
             _createProductCommandHandler = createProductCommandHandler;
             _getProductByIDQueryHandler = getProductByIDQueryHandler;
             _removeProductCommandHandler = removeProductCommandHandler;
             _getProductUpdateByIDQueryHandler = getProductUpdateByIDQueryHandler;
+            _updateProductCommandHandler = updateProductCommandHandler;
         }
 
         public IActionResult Index()
@@ -32,7 +34,7 @@ namespace DesignPattern.CQRS.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult AddProduct(CreateProductCommand command) 
+        public IActionResult AddProduct(CreateProductCommand command)
         {
             _createProductCommandHandler.Handle(command); //handle metodu sayesinde ekleme işlemine gidecek, yukarıdaki handle ile karışmayacak sınıflar farklı
             return RedirectToAction("Index");
@@ -52,6 +54,12 @@ namespace DesignPattern.CQRS.Controllers
         {
             var values = _getProductUpdateByIDQueryHandler.Handle(new GetProductUpdateByIDQuery(id));
             return View(values);
+        }
+        [HttpPost]
+        public IActionResult UpdateProduct(UpdateProductCommand command)
+        {
+            _updateProductCommandHandler.Handle(command);
+            return RedirectToAction("Index");
         }
     }
 }
