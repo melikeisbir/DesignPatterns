@@ -27,6 +27,7 @@ namespace DesignPattern.CQRS
         {
             services.AddDbContext<Context>();
             services.AddScoped<GetProductQueryHandler>(); //uygulama açýldýðýnda sadece bir kez oluþturulsun sonra hep kullanýlabilsin
+            services.AddScoped<CreateProductCommandHandler>(); //her constructorda scoped eklemeliyiz
             services.AddControllersWithViews();
         }
 
