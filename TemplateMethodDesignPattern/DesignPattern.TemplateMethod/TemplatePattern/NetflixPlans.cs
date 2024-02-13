@@ -10,7 +10,7 @@
             Resolution(string.Empty);
             Content(string.Empty);
         }
-        public abstract string PlanType(string planType);
+        public abstract string PlanType(string planType); //method tanımladık
         public abstract int CountPerson(int countPerson);
         public abstract double Price(double price);
         public abstract string Resolution(string resolution);
