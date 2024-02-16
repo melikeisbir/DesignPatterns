@@ -1,4 +1,5 @@
 using DesignPattern.Observer.DAL;
+using DesignPattern.Observer.ObserverPattern;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -26,6 +27,16 @@ namespace DesignPattern.Observer
         {
             services.AddDbContext<Context>();
             services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>();
+
+            services.AddSingleton<ObserverObject>(sp =>
+            {
+                ObserverObject observerObject = new();//baþlangýçta boþ olsun yapýlan kayda göre dolsun
+                observerObject.RegisterObserver(new CreateWelcomeMessage(sp));
+                observerObject.RegisterObserver(new CreateMagazineAnnouncement(sp));
+                observerObject.RegisterObserver(new CreateDiscountCode(sp));
+                return observerObject;
+            });//hafýzada sadece bir kere nesne örneði oluþtur ve onu uygulama boyunca kullan
+
             services.AddControllersWithViews();
         }
 
