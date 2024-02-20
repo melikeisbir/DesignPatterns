@@ -1,4 +1,9 @@
+using DesignPattern.BusinessLayer.Abstract;
+using DesignPattern.BusinessLayer.Concrete;
+using DesignPattern.DataAccessLayer.Abstract;
 using DesignPattern.DataAccessLayer.Concrete;
+using DesignPattern.DataAccessLayer.EntityFramework;
+using DesignPattern.DataAccessLayer.UnitOfWork;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -25,6 +30,10 @@ namespace DesignPattern.UnitOfWork
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<ICustomerDal, EfCustomerDal>(); //icustomerdalý gördüðün zaman efcustomerdalý caðýr
+            services.AddScoped<ICustomerService, CustomerManager>(); 
+            services.AddScoped<IUnitOfWorkDal, UnitOfWorkDal>(); 
+
             services.AddDbContext<Context>();
             services.AddControllersWithViews();
         }
