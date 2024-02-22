@@ -23,6 +23,12 @@ namespace RepositoryDesignPattern.PresentationLayer.Controllers
             var values = _productService.TGetList();
             return View(values);
         }
+        public IActionResult Index2()
+        {
+            var values = _productService.TProductListWithCategory();
+            return View(values);
+        }
+
         [HttpGet]
         public IActionResult AddProduct()
         {
@@ -50,7 +56,14 @@ namespace RepositoryDesignPattern.PresentationLayer.Controllers
         [HttpGet]
         public IActionResult UpdateProduct(int id)
         {
+            List<SelectListItem> values = (from x in _categoryService.TGetList()
+                                           select new SelectListItem
+                                           {
+                                               Text = x.CategoryName,
+                                               Value = x.CategoryID.ToString()
+                                           }).ToList();
             var value = _productService.TGetByID(id);
+            ViewBag.v = values;
             return View(value);
         }
         [HttpPost]

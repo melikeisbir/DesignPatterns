@@ -38,6 +38,11 @@ namespace RepositoryDesignPattern.BusinessLayer.Concrete
             _productDal.Insert(t);
         }
 
+        public List<Product> TProductListWithCategory() //enetitye özel metot
+        {
+            return _productDal.ProductListWithCategory();
+        }
+
         public void TUpdate(Product t)
         {
            _productDal.Update(t);

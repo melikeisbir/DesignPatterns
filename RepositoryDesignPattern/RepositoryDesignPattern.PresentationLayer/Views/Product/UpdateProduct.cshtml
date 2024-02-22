@@ -6,6 +6,7 @@
 <div class="container">
     <br />
     <form method="post">
+        <input type="hidden" asp-for="ProductID" />
         <label>Ürün Adı</label>
         <input type="text" asp-for="ProductName" class="form-control" />
         <br />
@@ -18,7 +19,7 @@
         <label>Ürün Kategorisi</label>
         @Html.DropDownListFor(x => x.CategoryID, (List<SelectListItem>)ViewBag.v, new { @class = "form-control" })
         <br />
-        <button class="btn btn-outline-info">Kaydet</button>
+        <button class="btn btn-outline-dark">Güncelle</button>
     </form>
 </div>
 <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
