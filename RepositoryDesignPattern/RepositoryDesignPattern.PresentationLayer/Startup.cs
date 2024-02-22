@@ -30,6 +30,8 @@ namespace RepositoryDesignPattern.PresentationLayer
         {
             services.AddScoped<ICategoryService, CategoryManager>(); //icategoryservicei göürnce categorymanageri çaðýr
             services.AddScoped<ICategoryDal, EfCategoryDal>();
+            services.AddScoped<IProductService, ProductManager>();
+            services.AddScoped<IProductDal, EfProductDal>();
 
             services.AddDbContext<Context>();
             services.AddControllersWithViews();
