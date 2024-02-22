@@ -1,18 +1,23 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using RepositoryDesignPattern.BusinessLayer.Abstract;
 using RepositoryDesignPattern.EntityLayer.Concrete;
+using System.Collections.Generic;
+using System.Linq;
+using System.Windows.Markup;
 
 namespace RepositoryDesignPattern.PresentationLayer.Controllers
 {
     public class ProductController : Controller
     {
         private readonly IProductService _productService;
+        private readonly ICategoryService _categoryService;
 
-        public ProductController(IProductService productService)
+        public ProductController(IProductService productService, ICategoryService categoryService)
         {
             _productService = productService;
+            _categoryService = categoryService;
         }
-
         public IActionResult Index()
         {
             var values = _productService.TGetList();
@@ -21,6 +26,13 @@ namespace RepositoryDesignPattern.PresentationLayer.Controllers
         [HttpGet]
         public IActionResult AddProduct()
         {
+            List<SelectListItem> values = (from x in _categoryService.TGetList()
+                                           select new SelectListItem
+                                           {
+                                               Text = x.CategoryName,
+                                               Value = x.CategoryID.ToString()
+                                           }).ToList();
+            ViewBag.v = values; //kullanıcıya dropdown üzerinden veri seçtirmek
             return View();
         }
         [HttpPost]
