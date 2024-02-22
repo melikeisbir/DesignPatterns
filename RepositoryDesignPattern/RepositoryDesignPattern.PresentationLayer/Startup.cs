@@ -4,7 +4,11 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using RepositoryDesignPattern.BusinessLayer.Abstract;
+using RepositoryDesignPattern.BusinessLayer.Concrete;
+using RepositoryDesignPattern.DataAccessLayer.Abstract;
 using RepositoryDesignPattern.DataAccessLayer.Concrete;
+using RepositoryDesignPattern.DataAccessLayer.EntityFramework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +28,9 @@ namespace RepositoryDesignPattern.PresentationLayer
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<ICategoryService, CategoryManager>(); //icategoryservicei göürnce categorymanageri çaðýr
+            services.AddScoped<ICategoryDal, EfCategoryDal>();
+
             services.AddDbContext<Context>();
             services.AddControllersWithViews();
         }
