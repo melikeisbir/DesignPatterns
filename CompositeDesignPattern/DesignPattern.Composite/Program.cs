@@ -1,7 +1,10 @@
+using DesignPattern.Composite.DAL;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<Context>();
 
 var app = builder.Build();
 

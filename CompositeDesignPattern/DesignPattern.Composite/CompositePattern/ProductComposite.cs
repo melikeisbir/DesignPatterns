@@ -2,7 +2,7 @@
 
 namespace DesignPattern.Composite.CompositePattern
 {
-    public class ProductComposite : IComponent
+    public class ProductComposite : IComponent //categorinin en başı
     {
         public int Id { get; set; }
         public string Name { get; set; }
