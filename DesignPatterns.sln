@@ -31,13 +31,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesignPattern.BusinessLayer
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RepositoryDesignPattern", "RepositoryDesignPattern", "{31E35720-1E0A-4F80-9FA3-93EF4E6A3F84}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepositoryDesignPattern.EntityLayer", "RepositoryDesignPattern\RepositoryDesignPattern.EntityLayer\RepositoryDesignPattern.EntityLayer.csproj", "{CFBA5368-77E1-4EAF-B7A8-C69F5F2D807B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RepositoryDesignPattern.EntityLayer", "RepositoryDesignPattern\RepositoryDesignPattern.EntityLayer\RepositoryDesignPattern.EntityLayer.csproj", "{CFBA5368-77E1-4EAF-B7A8-C69F5F2D807B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepositoryDesignPattern.DataAccessLayer", "RepositoryDesignPattern\RepositoryDesignPattern.DataAccessLayer\RepositoryDesignPattern.DataAccessLayer.csproj", "{2D49FABA-6940-47A6-A7E1-73E7A42CC486}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RepositoryDesignPattern.DataAccessLayer", "RepositoryDesignPattern\RepositoryDesignPattern.DataAccessLayer\RepositoryDesignPattern.DataAccessLayer.csproj", "{2D49FABA-6940-47A6-A7E1-73E7A42CC486}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepositoryDesignPattern.BusinessLayer", "RepositoryDesignPattern\RepositoryDesignPattern.BusinessLayer\RepositoryDesignPattern.BusinessLayer.csproj", "{2EEAF181-C725-4E75-83D3-DB6A76C112B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RepositoryDesignPattern.BusinessLayer", "RepositoryDesignPattern\RepositoryDesignPattern.BusinessLayer\RepositoryDesignPattern.BusinessLayer.csproj", "{2EEAF181-C725-4E75-83D3-DB6A76C112B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepositoryDesignPattern.PresentationLayer", "RepositoryDesignPattern\RepositoryDesignPattern.PresentationLayer\RepositoryDesignPattern.PresentationLayer.csproj", "{41689508-39D4-4284-9F53-A6E39707A206}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RepositoryDesignPattern.PresentationLayer", "RepositoryDesignPattern\RepositoryDesignPattern.PresentationLayer\RepositoryDesignPattern.PresentationLayer.csproj", "{41689508-39D4-4284-9F53-A6E39707A206}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CompositeDesignPattern", "CompositeDesignPattern", "{E7191F33-7722-4E2E-9694-76644EE410D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPattern.Composite", "CompositeDesignPattern\DesignPattern.Composite\DesignPattern.Composite.csproj", "{01F9E382-CF4B-409E-81DA-122F30EC629E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -93,6 +97,10 @@ Global
 		{41689508-39D4-4284-9F53-A6E39707A206}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{41689508-39D4-4284-9F53-A6E39707A206}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{41689508-39D4-4284-9F53-A6E39707A206}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01F9E382-CF4B-409E-81DA-122F30EC629E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01F9E382-CF4B-409E-81DA-122F30EC629E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01F9E382-CF4B-409E-81DA-122F30EC629E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01F9E382-CF4B-409E-81DA-122F30EC629E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -110,6 +118,7 @@ Global
 		{2D49FABA-6940-47A6-A7E1-73E7A42CC486} = {31E35720-1E0A-4F80-9FA3-93EF4E6A3F84}
 		{2EEAF181-C725-4E75-83D3-DB6A76C112B3} = {31E35720-1E0A-4F80-9FA3-93EF4E6A3F84}
 		{41689508-39D4-4284-9F53-A6E39707A206} = {31E35720-1E0A-4F80-9FA3-93EF4E6A3F84}
+		{01F9E382-CF4B-409E-81DA-122F30EC629E} = {E7191F33-7722-4E2E-9694-76644EE410D0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EB91F13F-5D59-4204-93D7-BF2464AF27B9}
