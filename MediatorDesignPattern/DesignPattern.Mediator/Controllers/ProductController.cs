@@ -18,5 +18,10 @@ namespace DesignPattern.Mediator.Controllers
             var values = await _mediator.Send(new GetAllProductQuery()); //send bizden request(istek değeri) bekler. (IRequestin olduğu yerden)
             return View(values);
         }
+        public async Task<IActionResult> GetProduct(int id)
+        {
+            var values = await _mediator.Send(new GetProductByIDQuery(id));
+            return View(values);
+        }
     }
 }

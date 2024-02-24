@@ -18,6 +18,7 @@
         <th>Kategorisi</th>
         <th>Sil</th>
         <th>Güncelle</th>
+        <th>Detaylar</th>
     </tr>
     @foreach(var item in Model)
     {
@@ -30,6 +31,7 @@
             <td>@item.ProductCategory</td>
             <td><a href="#" class="btn btn-outline-danger">Sil</a></td>
             <td><a href="#" class="btn btn-outline-success">Güncelle</a></td>
+            <td><a href="/Product/GetProduct/@item.ProductID" class="btn btn-outline-dark">Detaylar</a></td>
         </tr>
     }
 </table>
