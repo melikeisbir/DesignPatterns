@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="MediatorPattern\" />
+    <Folder Include="MediatorPattern\Commands\" />
   </ItemGroup>
 
 </Project>
