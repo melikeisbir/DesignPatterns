@@ -41,5 +41,16 @@ namespace DesignPattern.Mediator.Controllers
             await _mediator.Send(updateProductCommand);
             return RedirectToAction("Index");
         }
+        [HttpGet]
+        public IActionResult AddProduct()
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> AddProduct(CreateProductCommand createProductCommand)
+        {
+            await _mediator.Send(createProductCommand);
+            return RedirectToAction("Index");
+        }
     }
 }
