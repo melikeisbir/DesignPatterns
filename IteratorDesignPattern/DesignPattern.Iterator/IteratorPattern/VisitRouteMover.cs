@@ -11,7 +11,7 @@
         public int VisitRouteCount { get=> visitRoutes.Count; } //ziyaret edilecek şehir sayısı
         public IIterator<VisitRoute> CreateIterator()
         {
-            
+            return new VisitRouteIterator(this);//her defasında kendi içinde döndürebileceği visitrouteiterator içinde bulundauğu sınıfı
         }
     }
 }
