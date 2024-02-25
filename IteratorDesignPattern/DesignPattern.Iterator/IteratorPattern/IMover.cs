@@ -2,6 +2,6 @@
 {
     public interface IMover<T>
     {
-        Iterator<T> CreateIterator();
+        IIterator<T> CreateIterator();
     }
 }

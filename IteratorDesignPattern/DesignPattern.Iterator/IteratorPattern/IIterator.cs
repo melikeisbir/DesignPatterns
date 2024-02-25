@@ -1,6 +1,6 @@
 ﻿namespace DesignPattern.Iterator.IteratorPattern
 {
-    public interface Iterator<T>
+    public interface IIterator<T>
     {
         T CurrentItem { get; } //aktif öge nedir
         bool NextLocation(); // başka bir öge var mı
