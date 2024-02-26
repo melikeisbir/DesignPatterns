@@ -6,17 +6,28 @@ namespace DesignPattern.Facade.Controllers
 {
     public class OrderController : Controller
     {
-        Context context = new Context();
+        [HttpGet]
+        public IActionResult OrderDetailStart()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult OrderDetailStart(int customerID, int productId, int orderID, int productCount, decimal productPrice)
+        {
+            OrderFacade order = new OrderFacade();
+            order.CompleteOrderDetail(customerID, productId, orderID, productCount, productPrice);
+            return RedirectToAction("Index");
+        }
         [HttpGet]
         public IActionResult OrderStart()
         {
             return View();
         }
         [HttpPost]
-        public IActionResult OrderStart(int customerID, int productId, int orderID, int productCount, decimal productPrice)
+        public IActionResult OrderStart(int customerID)
         {
-            OrderFacade order = new OrderFacade();
-            order.CompleteOrder(customerID, productId, orderID, productCount, productPrice);
+            OrderFacade orderFacade = new OrderFacade();
+            orderFacade.CompeteOrder(customerID);
             return RedirectToAction("Index");
         }
         public IActionResult Index()
