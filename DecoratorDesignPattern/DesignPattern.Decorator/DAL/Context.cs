@@ -9,5 +9,6 @@ namespace DesignPattern.Decorator.DAL
             optionsBuilder.UseSqlServer("server=MELI\\SQLEXPRESS;initial catalog=DesignPattern11;integrated security=true;");
         }
         public DbSet<Message> Messages { get; set; }
+        public DbSet<Notifier> Notifiers { get; set; }
     }
 }
