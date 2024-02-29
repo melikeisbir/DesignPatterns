@@ -11,8 +11,8 @@ namespace DesignPattern.Decorator.DecoratorPattern
             _notifier = notifier;
         }
 
-        public void CreateNotify(Notifier notifier) // içinde context sınıfı oldugu için bir daha tanımlamadık
-        {
+        virtual public void CreateNotify(Notifier notifier) // içinde context sınıfı oldugu için bir daha tanımlamadık
+        {//virtual anahtar kelimesini ekleyerek bunun içeriğinin başka yerlerde değiştirilebilecğini uygulamaya belirtildi
             notifier.NotifierCreator = "Admin";
             notifier.NotifierSubject = "Toplantı";
             notifier.NotifierType = "Public";
