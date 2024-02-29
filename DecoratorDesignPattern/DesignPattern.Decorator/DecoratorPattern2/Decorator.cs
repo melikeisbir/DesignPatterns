@@ -11,7 +11,7 @@ namespace DesignPattern.Decorator.DecoratorPattern2
             _sendMessage = sendMessage;
         }
 
-        public void SendMessage(Message message)
+        virtual public void SendMessage(Message message)
         {
             message.MessageReceiver = "Everybody";
             message.MessageSender = "Admin";
