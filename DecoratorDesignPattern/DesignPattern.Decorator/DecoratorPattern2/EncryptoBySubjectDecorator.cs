@@ -14,10 +14,6 @@ namespace DesignPattern.Decorator.DecoratorPattern2
         //decoratorderki virtuala göre override
         public void SendMessageByEncryptoSubject(Message message)
         {
-            message.MessageSender = "İnsan Kaynakları";
-            message.MessageReceiver = "Yazılım Ekibi";
-            message.MessageContent = "Saat 12.00'da toplantı var";
-            message.MessageSubject = "Toplantı";
             string data = "";
             data = message.MessageSubject;
             char[] chars = data.ToCharArray(); //karakterleri arraya dönüştürme
